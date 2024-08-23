@@ -88,7 +88,7 @@ fun ClientScreen() {
     // Setup socket communication
     LaunchedEffect(Unit) {
         launch(Dispatchers.IO) {
-            val socket = Socket("192.168.1.4", 12345)
+            val socket = Socket("YOUR_SERVER_IP_ADDRESS", 12345)
             output = PrintWriter(OutputStreamWriter(socket.getOutputStream()), true)
             output?.println("Connected")
             val input = BufferedReader(InputStreamReader(socket.getInputStream()))
